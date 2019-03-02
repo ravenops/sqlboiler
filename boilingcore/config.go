@@ -4,9 +4,9 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/ravenops/sqlboiler/drivers"
+	"github.com/ravenops/sqlboiler/importers"
 	"github.com/spf13/cast"
-	"github.com/volatiletech/sqlboiler/drivers"
-	"github.com/volatiletech/sqlboiler/importers"
 )
 
 // Config for the running of the commands

@@ -9,8 +9,8 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/pkg/errors"
-	"github.com/volatiletech/sqlboiler/drivers"
-	"github.com/volatiletech/sqlboiler/importers"
+	"github.com/ravenops/sqlboiler/drivers"
+	"github.com/ravenops/sqlboiler/importers"
 )
 
 func init() {
@@ -197,7 +197,7 @@ func (m *MySQLDriver) Columns(schema, tableName string, whitelist, blacklist []s
 			from information_schema.table_constraints tc
 			inner join information_schema.key_column_usage kcu
 				on tc.constraint_name = kcu.constraint_name and tc.table_name = kcu.table_name and tc.table_schema = kcu.table_schema
-			where c.table_name = tc.table_name and c.column_name = kcu.column_name and c.table_schema = kcu.constraint_schema and 
+			where c.table_name = tc.table_name and c.column_name = kcu.column_name and c.table_schema = kcu.constraint_schema and
 				(tc.constraint_type = 'PRIMARY KEY' or tc.constraint_type = 'UNIQUE') and
 				(select count(*) from information_schema.key_column_usage where table_schema = kcu.table_schema and constraint_schema = kcu.table_schema and table_name = tc.table_name and constraint_name = tc.constraint_name) = 1
 		) as is_unique
@@ -470,8 +470,8 @@ func (MySQLDriver) Imports() (col importers.Collection, err error) {
 				`"strings"`,
 			},
 			ThirdParty: importers.List{
-				`"github.com/volatiletech/sqlboiler/strmangle"`,
-				`"github.com/volatiletech/sqlboiler/drivers"`,
+				`"github.com/ravenops/sqlboiler/strmangle"`,
+				`"github.com/ravenops/sqlboiler/drivers"`,
 			},
 		},
 	}
@@ -498,8 +498,8 @@ func (MySQLDriver) Imports() (col importers.Collection, err error) {
 				`"github.com/kat-co/vala"`,
 				`"github.com/pkg/errors"`,
 				`"github.com/spf13/viper"`,
-				`"github.com/volatiletech/sqlboiler/drivers/sqlboiler-mysql/driver"`,
-				`"github.com/volatiletech/sqlboiler/randomize"`,
+				`"github.com/ravenops/sqlboiler/drivers/sqlboiler-mysql/driver"`,
+				`"github.com/ravenops/sqlboiler/randomize"`,
 				`_ "github.com/go-sql-driver/mysql"`,
 			},
 		},
@@ -507,68 +507,68 @@ func (MySQLDriver) Imports() (col importers.Collection, err error) {
 
 	col.BasedOnType = importers.Map{
 		"null.Float32": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Float64": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Int": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Int8": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Int16": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Int32": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Int64": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Uint": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Uint8": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Uint16": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Uint32": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Uint64": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.String": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Bool": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Time": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.Bytes": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 		"null.JSON": {
-			ThirdParty: importers.List{`"github.com/volatiletech/null"`},
+			ThirdParty: importers.List{`"github.com/ravenops/null"`},
 		},
 
 		"time.Time": {
 			Standard: importers.List{`"time"`},
 		},
 		"types.JSON": {
-			ThirdParty: importers.List{`"github.com/volatiletech/sqlboiler/types"`},
+			ThirdParty: importers.List{`"github.com/ravenops/sqlboiler/types"`},
 		},
 		"types.Decimal": {
-			ThirdParty: importers.List{`"github.com/volatiletech/sqlboiler/types"`},
+			ThirdParty: importers.List{`"github.com/ravenops/sqlboiler/types"`},
 		},
 		"types.NullDecimal": {
-			ThirdParty: importers.List{`"github.com/volatiletech/sqlboiler/types"`},
+			ThirdParty: importers.List{`"github.com/ravenops/sqlboiler/types"`},
 		},
 	}
 	return col, err

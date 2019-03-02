@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/volatiletech/sqlboiler/drivers"
+	"github.com/ravenops/sqlboiler/drivers"
 
 	"gopkg.in/DATA-DOG/go-sqlmock.v1"
 )

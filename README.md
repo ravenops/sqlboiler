@@ -1,12 +1,12 @@
 ![sqlboiler logo](https://i.imgur.com/lMXUTPE.png)
 
-[![License](https://img.shields.io/badge/license-BSD-blue.svg)](https://github.com/volatiletech/sqlboiler/blob/master/LICENSE)
-[![GoDoc](https://godoc.org/github.com/volatiletech/sqlboiler?status.svg)](https://godoc.org/github.com/volatiletech/sqlboiler)
+[![License](https://img.shields.io/badge/license-BSD-blue.svg)](https://github.com/ravenops/sqlboiler/blob/master/LICENSE)
+[![GoDoc](https://godoc.org/github.com/ravenops/sqlboiler?status.svg)](https://godoc.org/github.com/ravenops/sqlboiler)
 [![Mail](https://img.shields.io/badge/mail%20list-sqlboiler-lightgrey.svg)](https://groups.google.com/a/volatile.tech/forum/#!forum/sqlboiler)
 [![Mail-Annc](https://img.shields.io/badge/mail%20list-sqlboiler--announce-lightgrey.svg)](https://groups.google.com/a/volatile.tech/forum/#!forum/sqlboiler-announce)
 [![Slack](https://img.shields.io/badge/slack-%23general-lightgrey.svg)](https://sqlboiler.from-the.cloud)
-[![CircleCI](https://circleci.com/gh/volatiletech/sqlboiler.svg?style=shield)](https://circleci.com/gh/volatiletech/sqlboiler)
-[![Go Report Card](https://goreportcard.com/badge/volatiletech/sqlboiler)](http://goreportcard.com/report/volatiletech/sqlboiler)
+[![CircleCI](https://circleci.com/gh/ravenops/sqlboiler.svg?style=shield)](https://circleci.com/gh/ravenops/sqlboiler)
+[![Go Report Card](https://goreportcard.com/badge/ravenops/sqlboiler)](http://goreportcard.com/report/ravenops/sqlboiler)
 
 SQLBoiler is a tool to generate a Go ORM tailored to your database schema.
 
@@ -128,10 +128,10 @@ Table of Contents
 
 | Database          | Driver Location |
 | ----------------- | --------------- |
-| PostgreSQL        | [https://github.com/volatiletech/sqlboiler/drivers/sqlboiler-psql](drivers/sqlboiler-psql)
-| MySQL             | [https://github.com/volatiletech/sqlboiler/drivers/sqlboiler-mysql](drivers/sqlboiler-mysql)
-| MSSQLServer 2012+ | [https://github.com/volatiletech/sqlboiler/drivers/sqlboiler-mssql](drivers/sqlboiler-mssql)
-| SQLite3           | https://github.com/volatiletech/sqlboiler-sqlite3
+| PostgreSQL        | [https://github.com/ravenops/sqlboiler/drivers/sqlboiler-psql](drivers/sqlboiler-psql)
+| MySQL             | [https://github.com/ravenops/sqlboiler/drivers/sqlboiler-mysql](drivers/sqlboiler-mysql)
+| MSSQLServer 2012+ | [https://github.com/ravenops/sqlboiler/drivers/sqlboiler-mssql](drivers/sqlboiler-mssql)
+| SQLite3           | https://github.com/ravenops/sqlboiler-sqlite3
 | CockroachDB       | https://github.com/glerchundi/sqlboiler-crdb
 
 **Note:** SQLBoiler supports out of band driver support so you can make your own
@@ -145,7 +145,7 @@ For a comprehensive list of available operations and examples please see [Featur
 ```go
 import (
   // Import this so we don't have to use qm.Limit etc.
-  . "github.com/volatiletech/sqlboiler/queries/qm"
+  . "github.com/ravenops/sqlboiler/queries/qm"
 )
 
 // Open handle to database like normal
@@ -259,11 +259,11 @@ available.
 #### Download
 
 ```shell
-go get -u -t github.com/volatiletech/sqlboiler
+go get -u -t github.com/ravenops/sqlboiler
 
 # Also install the driver of your choice, there exists pqsl, mysql, mssql
 # These are separate binaries.
-go get github.com/volatiletech/sqlboiler/drivers/sqlboiler-psql
+go get github.com/ravenops/sqlboiler/drivers/sqlboiler-psql
 ```
 
 #### Configuration
@@ -361,7 +361,7 @@ generate models for, we can invoke the sqlboiler command line utility.
 
 ```text
 SQL Boiler generates a Go ORM from template files, tailored to your database schema.
-Complete documentation is available at http://github.com/volatiletech/sqlboiler
+Complete documentation is available at http://github.com/ravenops/sqlboiler
 
 Usage:
   sqlboiler [flags] <driver>
@@ -478,8 +478,8 @@ you would use the key `[aliases.tables.videos.relationships.fk_name]`.
 In terms of how to understand what local and foreign are in the context of renaming relationships,
 local simply means "the side with the foreign key". For example in a `users <-> videos` relationship
 where we have a `author_id` on the video that refers to the id of the `users` table, the foreign key
-is on the `videos` table itself, so the `local` key refers to how we refer to the `videos` side 
-of the relationship. In the example below we're naming the local side (how we refer to the videos) 
+is on the `videos` table itself, so the `local` key refers to how we refer to the `videos` side
+of the relationship. In the example below we're naming the local side (how we refer to the videos)
 `AuthoredVideos`. The table foreign to the foreign key is the `users` table and we want to
 refer to that side of the relationship as the `Author`.
 
@@ -652,7 +652,7 @@ output_dir/
 
 **Note**: Because the `--templates` flag overrides the internal bindata of `sqlboiler`, if you still
 wish to generate the default templates it's recommended that you include the path to sqlboiler's templates
-as well. 
+as well.
 
 ```toml
 templates = [
@@ -960,7 +960,7 @@ safe, but be careful!
 
 ```go
 // Dot import so we can access query mods directly instead of prefixing with "qm."
-import . "github.com/volatiletech/sqlboiler/queries/qm"
+import . "github.com/ravenops/sqlboiler/queries/qm"
 
 // Use a raw query against a generated struct (Pilot in this example)
 // If this query mod exists in your call, it will override the others.
@@ -1096,7 +1096,7 @@ in combination with your own custom, non-generated model.
 
 ### Binding
 
-For a comprehensive ruleset for `Bind()` you can refer to our [godoc](https://godoc.org/github.com/volatiletech/sqlboiler/queries#Bind).
+For a comprehensive ruleset for `Bind()` you can refer to our [godoc](https://godoc.org/github.com/ravenops/sqlboiler/queries#Bind).
 
 The `Bind()` [Finisher](#finisher) allows the results of a query built with
 the [Raw SQL](#raw-query) method or the [Query Builder](#query-building) methods to be bound
@@ -1369,7 +1369,7 @@ tx.Rollback()
 
 It's also worth noting that there's a way to take advantage of `boil.SetDB()`
 by using the
-[boil.BeginTx()](https://godoc.org/github.com/volatiletech/sqlboiler/boil#BeginTx) 
+[boil.BeginTx()](https://godoc.org/github.com/ravenops/sqlboiler/boil#BeginTx)
 function. This opens a transaction using the globally stored database.
 
 ### Debug Logging
@@ -1444,7 +1444,7 @@ zero value.
 **NOTE:** CreatedAt/UpdatedAt are not included in `Whitelist` automatically.
 
 See the documentation for
-[boil.Columns.InsertColumnSet](https://godoc.org/github.com/volatiletech/sqlboiler/boil/#Columns.InsertColumnSet)
+[boil.Columns.InsertColumnSet](https://godoc.org/github.com/ravenops/sqlboiler/boil/#Columns.InsertColumnSet)
 for more details.
 
 ```go
@@ -1496,7 +1496,7 @@ documentation above for more details.
 **NOTE:** CreatedAt/UpdatedAt are not included in `Whitelist` automatically.
 
 See the documentation for
-[boil.Columns.UpdateColumnSet](https://godoc.org/github.com/volatiletech/sqlboiler/boil/#Columns.UpdateColumnSet)
+[boil.Columns.UpdateColumnSet](https://godoc.org/github.com/ravenops/sqlboiler/boil/#Columns.UpdateColumnSet)
 for more details.
 
 ```go
@@ -1764,12 +1764,12 @@ You *must* use a DSN flag in MySQL connections, see: [Requirements](#requirement
 
 #### Where is the homepage?
 
-The homepage for the [SQLBoiler](https://github.com/volatiletech/sqlboiler) [Golang ORM](https://github.com/volatiletech/sqlboiler)
-generator is located at: https://github.com/volatiletech/sqlboiler
+The homepage for the [SQLBoiler](https://github.com/ravenops/sqlboiler) [Golang ORM](https://github.com/ravenops/sqlboiler)
+generator is located at: https://github.com/ravenops/sqlboiler
 
 ## Benchmarks
 
-If you'd like to run the benchmarks yourself check out our [boilbench](https://github.com/volatiletech/boilbench) repo.
+If you'd like to run the benchmarks yourself check out our [boilbench](https://github.com/ravenops/boilbench) repo.
 
 ```bash
 go test -bench . -benchmem

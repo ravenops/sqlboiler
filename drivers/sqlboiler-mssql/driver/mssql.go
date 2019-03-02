@@ -492,52 +492,52 @@ func (MSSQLDriver) Imports() (col importers.Collection, err error) {
 
 	col.BasedOnType = importers.Map{
 		"null.Float32": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Float64": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Int": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Int8": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Int16": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Int32": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Int64": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Uint": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Uint8": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Uint16": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Uint32": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Uint64": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.String": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Bool": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Time": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"null.Bytes": {
-			ThirdParty: importers.List{`"github.com/ravenops/null"`},
+			ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 		},
 		"time.Time": {
 			Standard: importers.List{`"time"`},

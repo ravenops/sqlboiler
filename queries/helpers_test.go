@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ravenops/null"
+	"github.com/sqlboiler/null"
 )
 
 type testObj struct {

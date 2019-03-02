@@ -186,7 +186,7 @@ func TestAddTypeImports(t *testing.T) {
 			`"time"`,
 		},
 		ThirdParty: List{
-			`"github.com/ravenops/null"`,
+			`"github.com/sqlboiler/null"`,
 			`"github.com/ravenops/sqlboiler/boil"`,
 		},
 	}
@@ -200,7 +200,7 @@ func TestAddTypeImports(t *testing.T) {
 	imps := NewDefaultImports()
 
 	imps.BasedOnType = Map{
-		"null.Time": Set{ThirdParty: List{`"github.com/ravenops/null"`}},
+		"null.Time": Set{ThirdParty: List{`"github.com/sqlboiler/null"`}},
 		"time.Time": Set{Standard: List{`"time"`}},
 	}
 
@@ -217,7 +217,7 @@ func TestAddTypeImports(t *testing.T) {
 			`"time"`,
 		},
 		ThirdParty: List{
-			`"github.com/ravenops/null"`,
+			`"github.com/sqlboiler/null"`,
 			`"github.com/ravenops/sqlboiler/boil"`,
 		},
 	}
@@ -234,7 +234,7 @@ func TestMergeSet(t *testing.T) {
 
 	a := Set{
 		Standard:   List{"fmt"},
-		ThirdParty: List{"github.com/ravenops/sqlboiler", "github.com/ravenops/null"},
+		ThirdParty: List{"github.com/ravenops/sqlboiler", "github.com/sqlboiler/null"},
 	}
 	b := Set{
 		Standard:   List{"os"},
@@ -246,8 +246,8 @@ func TestMergeSet(t *testing.T) {
 	if c.Standard[0] != "fmt" && c.Standard[1] != "os" {
 		t.Errorf("Wanted: fmt, os got: %#v", c.Standard)
 	}
-	if c.ThirdParty[0] != "github.com/ravenops/null" && c.ThirdParty[1] != "github.com/ravenops/sqlboiler" {
-		t.Errorf("Wanted: github.com/ravenops/sqlboiler, github.com/ravenops/null got: %#v", c.ThirdParty)
+	if c.ThirdParty[0] != "github.com/sqlboiler/null" && c.ThirdParty[1] != "github.com/ravenops/sqlboiler" {
+		t.Errorf("Wanted: github.com/ravenops/sqlboiler, github.com/sqlboiler/null got: %#v", c.ThirdParty)
 	}
 }
 

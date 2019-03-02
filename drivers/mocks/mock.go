@@ -23,16 +23,16 @@ func (m *MockDriver) Imports() (importers.Collection, error) {
 	return importers.Collection{
 		BasedOnType: importers.Map{
 			"null.Int": {
-				ThirdParty: importers.List{`"github.com/ravenops/null"`},
+				ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 			},
 			"null.String": {
-				ThirdParty: importers.List{`"github.com/ravenops/null"`},
+				ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 			},
 			"null.Time": {
-				ThirdParty: importers.List{`"github.com/ravenops/null"`},
+				ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 			},
 			"null.Bytes": {
-				ThirdParty: importers.List{`"github.com/ravenops/null"`},
+				ThirdParty: importers.List{`"github.com/sqlboiler/null"`},
 			},
 
 			"time.Time": {

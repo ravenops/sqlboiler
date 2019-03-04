@@ -72,7 +72,7 @@ with the Github code review tools. Then it will be merged into dev, and later go
 1. You may need to install following package before able to run the tests.
 
    ```
-   go get -u github.com/sqlboiler/null
+   go get -u github.com/volatiletech/null
    ```
 
 1. Test the output

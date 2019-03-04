@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sqlboiler/null"
+	"github.com/volatiletech/null"
 )
 
 type testObj struct {
